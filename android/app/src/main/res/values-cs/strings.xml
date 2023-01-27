@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Klasifikátor budov</string>
+    <string name="load">Načti</string>
+    <string name="take">Vyfoť</string>
+    <string name="promt">Vlož fotografii budovy.</string>
+    <string name="permisions">Nemám práva anebo je poškozený obrázek!</string>
+    <string name="working">Pracuji…</string>
+    <string name="predicted">Výsledek:</string>
+    <string name="probab">s pravděpodobností</string>
+    <string name="neco">Aplikace je součástí bakalářské práce na Západočeské univerzitě v Plzni.</string>
+
+    <string-array name="styles">
+        <item>
+        Klasifikované slohy:
+        </item>
+        <item>
+                Secese,
+        </item>
+        <item>
+               Slohy staré Číny/Japonska/Koreje,
+            </item>
+        <item>
+                Baroko,
+                    </item>
+        <item>
+                Brutalismus,
+                   </item>
+        <item>
+                Kubismus,
+                    </item>
+        <item>
+                Funkcionalismus,
+                    </item>
+        <item>
+                Gotický sloh,
+                    </item>
+        <item>
+                Islámská a arabská architektura,
+                    </item>
+        <item>
+                Renesance,
+                    </item>
+        <item>
+                Románský sloh
+        </item>
+    </string-array>
+
+    <string-array name="results">
+        <item>
+                Secese
+        </item>
+        <item>
+               Slohy staré Číny/Japonska/Koreje
+            </item>
+        <item>
+                Baroko
+                    </item>
+        <item>
+                Brutalismus
+                   </item>
+        <item>
+                Kubismus
+                    </item>
+        <item>
+                Funkcionalismus
+                    </item>
+        <item>
+                Gotický sloh
+                    </item>
+        <item>
+                Islámská a arabská architektura
+                    </item>
+        <item>
+                Renesance
+                    </item>
+        <item>
+                Románský sloh
+        </item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="cs" xmlns="http://www.w3.org/1999/html"  xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Architectural Styles Classifier</title>
+
+                <link rel="bgPicture" th:src="@{/styles/img.png}">
+
+        <link rel="stylesheet" type="text/css" th:href="@{/styles/bg_pict.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.1/css/bootstrap.min.css}" />
+
+
+        <link rel="shortcut icon" th:href="@{/favicon.ico}">
+
+    </head>
+    <body>
+    <div class="bg page-holder bg-cover container-fluid">
+
+    <!-- Hlavicka -->
+        <div class="bg-transparent container">
+    <header class="container">
+        <br/>
+        <h1 class="font-weight-bolder text-dark">Architectural Styles Classifier</h1>
+        <p class="font-italic font-weight-bold"></p>
+    </header>
+        </div>
+
+        <div class="container lg-4 bg-light rounded">
+    <!-- KONEC: Hlavicka -->
+    <br>
+    <br>
+    <!-- KONEC: Menu -->
+
+    <!-- Obsah stranky -->
+            <div class="container text-center" >
+
+
+                <div th:switch="${empty}">
+                    <div th:case="'false'" id="descript" th:text="${description}"></div>
+
+                </div>
+                    <div th:switch="${empty}">
+                <h2 th:case="'false'" id="resul1" class="font-weight-bold text-primary" th:text="${class_name1}"></h2>
+                    </div>
+                <div th:switch="${empty}">
+                    <h3 th:case="'false'" id="resul2" class="font-weight-bold text-secondary" th:text="${class_name2}"></h3>
+                </div>
+                <div th:switch="${empty}">
+                    <h3 th:case="'false'" id="resul3" class="font-weight-bold text-secondary" th:text="${class_name3}"></h3>
+                </div>
+
+                <div th:switch="${empty}">
+                    <h2 th:case="'blocked'" class="font-weight-bold text-primary" th:text="${class_name1}"></h2>
+                </div>
+
+                  <img  class="img-fluid " id="pict" src="" alt="" />
+
+
+                <noscript>
+                    <h4 class="font-weight-bold text-info">If you want to see result, enable JavaScript please.</h4>
+                </noscript>
+
+            </div>
+            <form action="/result" id="picture" onsubmit="      document.getElementById('tlacitko').disabled = true;
+" class="container text-center" method="post" enctype=multipart/form-data>
+    <fieldset>
+        <legend>Load Picture of Building</legend>
+        <div class="form-group row container text-center">
+            <label for="lb_upload" class="col-5">
+                        </label>
+            <div class="btn">
+
+        <input type="file" class="container text-center" onchange="showImg()" name="file" id="lb_upload" accept="image/jpeg" required>
+      </div>
+        </div>
+
+        <div class="form-group container text-center">
+            <button type="submit" id="tlacitko" class="btn btn-success">Show prediction</button>
+        </div>
+    </fieldset>
+
+</form>
+    <br>
+        <br>
+        <br>
+
+
+                </div>
+            </div>
+
+  <footer class="container-fluid bg-dark text-white text-center font-weight-bold">
+         &copy; 2022 - dschnurp@students.zcu.cz
+    </footer>
+
+
+
+
+    <script type="text/javascript">
+  function createCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    }
+    var cookie = name + "=" + value + expires + "; path=" + "/";
+    document.cookie = cookie;
+  }
+  createCookie("JavaScriptEnabledCheck", 1, 0);
+</script>
+
+    <div th:switch="${empty}">
+
+        <script th:case="'false'">
+
+    window.onload = function() {
+    var picture = sessionStorage.getItem('imgData');
+    document.getElementById('pict').setAttribute('src', picture);
+
+
+
+};
+
+</script>
+
+        <script>
+            function showImg() {
+                                var reader  = new FileReader();
+        reader.onload = function(e)  {
+try{
+             sessionStorage.setItem('imgData',e.target.result );
+                             var picture = sessionStorage.getItem('imgData');
+     document.getElementById('pict').setAttribute('src', picture);
+}catch(err) {
+sessionStorage.setItem('imgData','nic' );
+window.alert('Loaded file is too large. Image will not be displayed. But result will work normally...');
+
+}
+            }
+            reader.readAsDataURL(document.getElementById('lb_upload').files[0]);
+            document.getElementById('tlacitko').click();
+
+if (document.getElementById('resul1') !== null) {
+
+     document.getElementById('descript').style.visibility = 'hidden';
+     document.getElementById('resul1').style.visibility = 'hidden';
+               document.getElementById('resul2').style.visibility = 'hidden';
+     document.getElementById('resul3').style.visibility = 'hidden';
+
+}
+
+
+}
+
+        </script>
+
+    </div>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.1/js/bootstrap.min.js}"></script>
+
+    </body>
+</html>

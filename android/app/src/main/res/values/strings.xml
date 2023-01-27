@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Buildings classifier</string>
+    <string name="load">Load Picture</string>
+    <string name="info" translatable="false">Info</string>
+    <string name="take">Take Picture</string>
+    <string name="promt">Provide picture of some Building.</string>
+    <string name="permisions">No permissions for files. Or wrong input!</string>
+    <string name="working">Working…</string>
+    <string name="predicted">Predicted:</string>
+    <string name="probab">with probability</string>
+    <string name="neco">This project is part of bachelor thesis at West Bohemia University.</string>
+    <string-array name="styles">
+        <item>
+        Supported Styles:
+        </item>
+        <item>
+                Art Nouveau,
+        </item>
+        <item>
+                Architecture of ancient China/Japan/Korea,
+            </item>
+        <item>
+                Baroque,
+                    </item>
+        <item>
+                Brutalist Architecture,
+                   </item>
+        <item>
+                Cubism,
+                    </item>
+        <item>
+                Functionalism,
+                    </item>
+        <item>
+                Gothic Architecture,
+                    </item>
+        <item>
+                Islamic Architecture,
+                    </item>
+        <item>
+                Renaissance,
+                    </item>
+        <item>
+                Romanesque
+        </item>
+    </string-array>
+
+    <string-array name="results">
+        <item>
+                Art Nouveau
+        </item>
+        <item>
+                Architecture of ancient China/Japan/Korea
+            </item>
+        <item>
+                Baroque
+                    </item>
+        <item>
+                Brutalist Architecture
+                   </item>
+        <item>
+                Cubism
+                    </item>
+        <item>
+                Functionalism
+                    </item>
+        <item>
+                Gothic Architecture
+                    </item>
+        <item>
+                Islamic Architecture
+                    </item>
+        <item>
+                Renaissance
+                    </item>
+        <item>
+                Romanesque
+        </item>
+    </string-array>
+
+</resources>
